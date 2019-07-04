@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid red;" ></canvas>
+<script>
+    let Rec = function(width,height)
+    {
+      this.width = width;
+      this.height = height;
+      this.getWidth = function () {
+          return this.width;
+      };
+      this.getHeight = function () {
+          return this.height;
+      };
+      this.setWidth = function (width) {
+          this.width = width;
+      };
+      this.setHeight = function (height) {
+          this.height = height;
+      };
+      this.getArea = function () {
+          return this.width*this.height;
+      };
+      this.getPerimeter = function () {
+          return (this.width+this.height)*2;
+      };
+      this.Draw = function () {
+          let c = document.getElementById('myCanvas');
+          let ctx = c.getContext("2d");
+          ctx.beginPath();
+          ctx.rect(100, 100, this.width, this.height);
+          ctx.stroke();
+      };
+
+    };
+    let rec = new Rec(200,100);
+    rec.Draw();
+</script>
+</body>
+</html>
