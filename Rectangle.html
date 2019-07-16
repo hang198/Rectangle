@@ -34,7 +34,10 @@
           let ctx = c.getContext("2d");
           ctx.beginPath();
           ctx.rect(100, 100, this.width, this.height);
+          ctx.fillStyle = 'red';
+          ctx.strokeStyle = 'green';
           ctx.stroke();
+          ctx.fill();
       };
 
     };
